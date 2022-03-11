@@ -21,7 +21,7 @@ fetchPokemons();
 
 //----------------------
 
-const getPokemonsUrl = 'https://pokemonkea.azurewebsites.net/pokemon';
+const getPokemonsUrl = 'https://http://localhost:8080/pokemon';
 let myPokemonsMap = new Map();
 
 async function getAllPokemons() {

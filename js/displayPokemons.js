@@ -63,6 +63,7 @@ async function insertPokemonDataToTable() {
 
 function displayPokemonFromMyMap() {
   let index = 1;
+
   myPokemonsMap.forEach((value, key) => {
     let rowCount = tableMyPokemons.rows.length;
     let row = tableMyPokemons.insertRow(rowCount);

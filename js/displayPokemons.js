@@ -56,7 +56,6 @@ async function insertPokemonDataToTable() {
 
   await getAllPokemons();
 
-
   //remove and make it so it's only the table that reloads
   window.location.reload();
 }

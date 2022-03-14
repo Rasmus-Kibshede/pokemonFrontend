@@ -23,7 +23,6 @@ fetchPokemons();
 
 //----------------------
 
-
 const getPokemonsUrl = "http://localhost:8080/pokemon";
 let myPokemonsMap = new Map();
 

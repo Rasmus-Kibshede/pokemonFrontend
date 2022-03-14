@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 const divPokemons = document.querySelector("#div-pokemons");
 const tablePokemons = document.querySelector("#table-pokemons");
@@ -19,7 +19,6 @@ function displayPokemonFromMap() {
     pTag.textContent = index;
     cell.appendChild(pTag);
 
-
     cell = row.insertCell(colCount++);
     const aTag = document.createElement("a");
     aTag.textContent = capitalizeFirstLetter(key);
@@ -32,7 +31,6 @@ function displayPokemonFromMap() {
     addInput.textContent = "add";
     addInput.value = "add pokemon";
     addInput.onclick = async function () {
-
       //insert to database here
       await postPokemon(key, value);
 
@@ -40,7 +38,7 @@ function displayPokemonFromMap() {
 
       //Remove this line and display the database result ind the pokemonMyTable
       //tableMyPokemons.children[0].appendChild(row);
-    }
+    };
     cell.appendChild(addInput);
 
     index++;
@@ -48,7 +46,6 @@ function displayPokemonFromMap() {
 }
 
 async function insertPokemonDataToTable() {
-
   //clear table here
   /*for (let i = 1; i < tableMyPokemons.rows.length; i++) {
     tableMyPokemons.deleteRow(i);
@@ -60,12 +57,10 @@ async function insertPokemonDataToTable() {
   window.location.reload();
 }
 
-
 function displayPokemonFromMyMap() {
   let index = 1;
 
   myPokemonsMap.forEach((value, key) => {
-
     let rowCount = tableMyPokemons.rows.length;
     let row = tableMyPokemons.insertRow(rowCount);
     let colCount = 0;
@@ -76,7 +71,6 @@ function displayPokemonFromMyMap() {
     const pTag = document.createElement("p");
     pTag.textContent = index;
     cell.appendChild(pTag);
-
 
     cell = row.insertCell(colCount++);
     const aTag = document.createElement("a");
@@ -90,28 +84,24 @@ function displayPokemonFromMyMap() {
     addInput.textContent = "remove";
     addInput.value = "remove pokemon";
     addInput.onclick = function () {
-
       //tableMyPokemons.deleteRow(row.rowIndex);
       restDeletePokemon(myPokemonsMap.get(key));
-
-    }
+    };
     cell.appendChild(addInput);
 
     index++;
   });
 }
 
-
 async function restDeletePokemon(pokemon) {
-
   const url = "http://localhost:8080/pokemon/" + pokemon.id;
 
   const fetchOptions = {
     method: "DELETE",
     header: {
-      "content-type": "application/json"
+      "content-type": "application/json",
     },
-    body: ""
+    body: "",
   };
 
   const response = await fetch(url, fetchOptions);
@@ -120,23 +110,6 @@ async function restDeletePokemon(pokemon) {
     alert("error when deleting a pokemon");
   }
 
-//remove and make it so it's only the table that reloads
+  //remove and make it so it's only the table that reloads
   window.location.reload();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

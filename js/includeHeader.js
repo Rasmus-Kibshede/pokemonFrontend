@@ -1,7 +1,7 @@
 fetch("./header.html")
-  .then(response => {
-    return response.text()
+  .then((response) => {
+    return response.text();
   })
-  .then(data => {
+  .then((data) => {
     document.querySelector("header").innerHTML = data;
   });

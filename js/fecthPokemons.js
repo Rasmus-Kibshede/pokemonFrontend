@@ -23,7 +23,6 @@ fetchPokemons();
 
 //----------------------
 
-
 const getPokemonsUrl = "https://pokemonkea.azurewebsites.net/pokemon";
 let myPokemonsMap = new Map();
 

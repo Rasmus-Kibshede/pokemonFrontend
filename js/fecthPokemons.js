@@ -1,4 +1,4 @@
-const pokemonUrl = "https://pokeapi.co/api/v2/pokemon";
+//const pokemonUrl = "https://pokeapi.co/api/v2/pokemon";
 let pokemonMap = new Map();
 
 function capitalizeFirstLetter(string) {
@@ -23,7 +23,7 @@ fetchPokemons();
 
 //----------------------
 
-const getPokemonsUrl = "https://pokemonkea.azurewebsites.net/pokemon";
+//const getPokemonsUrl = "https://pokemonkea.azurewebsites.net/pokemon";
 let myPokemonsMap = new Map();
 
 async function getAllPokemons() {

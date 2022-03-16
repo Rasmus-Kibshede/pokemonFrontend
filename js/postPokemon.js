@@ -1,4 +1,4 @@
-const url = "https://pokemonkea.azurewebsites.net/pokemon";
+//const url = "https://pokemonkea.azurewebsites.net/pokemon";
 
 const pokemon = {
   name: "",

@@ -1,4 +1,4 @@
-name: CI - lint
+name: lintCI
 on: push
 jobs:
   build:

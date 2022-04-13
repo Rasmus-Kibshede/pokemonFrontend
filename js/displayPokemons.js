@@ -91,6 +91,7 @@ function dbDisplayPokemon() {
     removeInput.onclick = async function () {
       tableMyPokemons.deleteRow(row.rowIndex);
       await restDeletePokemon(myPokemonsMap.get(key));
+
     };
     cell.appendChild(removeInput);
 

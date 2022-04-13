@@ -12,27 +12,26 @@ function capitalizeFirstLetter(string) {
 }
 
 function nextPage() {
-
   let values = pokemonUrl.split("=");
 
   let offset = parseInt(values[1].substring(0, values[1].indexOf("&"))) + 20;
 
-  pokemonUrl = "https://pokeapi.co/api/v2/pokemon?offset=" + offset + "&limit=20";
+  pokemonUrl =
+    "https://pokeapi.co/api/v2/pokemon?offset=" + offset + "&limit=20";
 
   fetchPokemons();
 }
 
 function previousPage() {
-
   let values = pokemonUrl.split("=");
 
   let offset = parseInt(values[1].substring(0, values[1].indexOf("&"))) - 20;
 
-  pokemonUrl = "https://pokeapi.co/api/v2/pokemon?offset=" + offset + "&limit=20";
+  pokemonUrl =
+    "https://pokeapi.co/api/v2/pokemon?offset=" + offset + "&limit=20";
 
   fetchPokemons();
 }
-
 
 //---------------------- Get all pokemons from API
 async function fetchPokemons() {
@@ -40,11 +39,10 @@ async function fetchPokemons() {
   await fetch(pokemonUrl)
     .then((res) => res.json())
     .then((res) => {
-        res.results.forEach((pokemon) => {
-          pokemonMap.set(pokemon.name, pokemon.url);
-        })
-      }
-    )
+      res.results.forEach((pokemon) => {
+        pokemonMap.set(pokemon.name, pokemon.url);
+      });
+    })
     .catch(() => console.log("error, in fetch pokemons from url"));
 
   apiDisplayPokemon();
@@ -71,4 +69,3 @@ async function getAllPokemons() {
 }
 
 getAllPokemons();
-

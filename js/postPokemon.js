@@ -29,7 +29,6 @@ async function postPokemon(key, value) {
   await fetch(url, postPokemonRequest).catch((err) => console.log(err));
 }
 
-
 function findPokemonIndex(url) {
   return url.split("/")[6];
 }

@@ -62,6 +62,7 @@ function dbDisplayPokemon() {
     let row = tableMyPokemons.insertRow(rowCount);
     let colCount = 0;
     let cell;
+    row.id = rowCount + "";
 
     cell = row.insertCell(colCount++);
     const pTag = document.createElement("p");

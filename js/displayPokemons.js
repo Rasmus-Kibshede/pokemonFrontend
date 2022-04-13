@@ -8,7 +8,6 @@ const tableMyPokemons = document.querySelector("#table-my-pokemons");
   $("#tableMyPokemons").load("index.html #tableMyPokemons");
 }*/
 
-
 function clearTable(table) {
   const rowCount = table.getElementsByTagName("tr").length;
 
@@ -17,12 +16,9 @@ function clearTable(table) {
   }
 }
 
-
 //Runs in the fetchPokemon script
 function apiDisplayPokemon() {
-
   clearTable(tablePokemons);
-
 
   let index = 1;
   pokemonMap.forEach((value, key) => {
@@ -48,18 +44,15 @@ function apiDisplayPokemon() {
     addInput.type = "button";
     addInput.value = "Catch pokemon";
     addInput.onclick = async function () {
-
       //TODO doesnt work like it should. Work correctly in debug mode
       await postPokemon(key, value);
       await getAllPokemons();
-
     };
     cell.appendChild(addInput);
 
     index++;
   });
 }
-
 
 function dbDisplayPokemon() {
   clearTable(tableMyPokemons);
@@ -91,7 +84,6 @@ function dbDisplayPokemon() {
     removeInput.onclick = async function () {
       tableMyPokemons.deleteRow(row.rowIndex);
       await restDeletePokemon(myPokemonsMap.get(key));
-
     };
     cell.appendChild(removeInput);
 

@@ -1,13 +1,7 @@
 "use strict";
 
-const divPokemons = document.querySelector("#div-pokemons");
 const tablePokemons = document.querySelector("#table-pokemons");
 const tableMyPokemons = document.querySelector("#table-my-pokemons");
-
-/*function refreshTable() {
-  $("#tableMyPokemons").load("index.html #tableMyPokemons");
-}*/
-
 
 function clearTable(table) {
   const rowCount = table.getElementsByTagName("tr").length;
@@ -23,14 +17,12 @@ function apiDisplayPokemon() {
 
   clearTable(tablePokemons);
 
-
   let index = 1;
   pokemonMap.forEach((value, key) => {
     let rowCount = tablePokemons.rows.length;
     let row = tablePokemons.insertRow(rowCount);
     let colCount = 0;
     let cell;
-    row.id = rowCount + "";
 
     cell = row.insertCell(colCount++);
     const pTag = document.createElement("p");
@@ -70,7 +62,6 @@ function dbDisplayPokemon() {
     let row = tableMyPokemons.insertRow(rowCount);
     let colCount = 0;
     let cell;
-    row.id = rowCount + "";
 
     cell = row.insertCell(colCount++);
     const pTag = document.createElement("p");

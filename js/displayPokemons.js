@@ -8,11 +8,8 @@ const tableMyPokemons = document.querySelector("#table-my-pokemons");
   $("#tableMyPokemons").load("index.html #tableMyPokemons");
 }*/
 
-
 //Runs in the fetchPokemon script
 function apiDisplayPokemon() {
-
-
   //fix so the doesnt remove the first tr.
   while (tablePokemons.hasChildNodes()) {
     tablePokemons.removeChild(tablePokemons.lastChild);
@@ -42,11 +39,9 @@ function apiDisplayPokemon() {
     addInput.type = "button";
     addInput.value = "Catch pokemon";
     addInput.onclick = async function () {
-
       //TODO doesnt work like it should. Work correctly in debug mode
       await postPokemon(key, value);
       await getAllPokemons();
-
     };
     cell.appendChild(addInput);
 
@@ -54,10 +49,8 @@ function apiDisplayPokemon() {
   });
 }
 
-
 function dbDisplayPokemon() {
-
-  console.log("display all pokemons - 3")
+  console.log("display all pokemons - 3");
 
   //fix so the doesnt remove the first tr.
   while (tableMyPokemons.hasChildNodes()) {
@@ -91,7 +84,6 @@ function dbDisplayPokemon() {
     removeInput.onclick = async function () {
       tableMyPokemons.deleteRow(row.rowIndex);
       await restDeletePokemon(myPokemonsMap.get(key));
-
     };
     cell.appendChild(removeInput);
 

@@ -31,7 +31,6 @@ async function postPokemon(key, value) {
   console.log(key + " " + value);
 }
 
-
 function findPokemonIndex(url) {
   return url.split("/")[6];
 }

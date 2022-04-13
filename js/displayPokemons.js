@@ -9,14 +9,20 @@ const tableMyPokemons = document.querySelector("#table-my-pokemons");
 }*/
 
 
+function clearTable(table) {
+  const rowCount = table.getElementsByTagName("tr").length;
+
+  for (let i = 1; i < rowCount; i++) {
+    table.deleteRow(1);
+  }
+}
+
+
 //Runs in the fetchPokemon script
 function apiDisplayPokemon() {
 
+  clearTable(tablePokemons);
 
-  //fix so the doesnt remove the first tr.
-  while (tablePokemons.hasChildNodes()) {
-    tablePokemons.removeChild(tablePokemons.lastChild);
-  }
 
   let index = 1;
   pokemonMap.forEach((value, key) => {
@@ -56,13 +62,7 @@ function apiDisplayPokemon() {
 
 
 function dbDisplayPokemon() {
-
-  console.log("display all pokemons - 3")
-
-  //fix so the doesnt remove the first tr.
-  while (tableMyPokemons.hasChildNodes()) {
-    tableMyPokemons.removeChild(tableMyPokemons.lastChild);
-  }
+  clearTable(tableMyPokemons);
 
   let index = 1;
   myPokemonsMap.forEach((value, key) => {
@@ -91,7 +91,6 @@ function dbDisplayPokemon() {
     removeInput.onclick = async function () {
       tableMyPokemons.deleteRow(row.rowIndex);
       await restDeletePokemon(myPokemonsMap.get(key));
-
     };
     cell.appendChild(removeInput);
 

@@ -64,11 +64,8 @@ async function getAllPokemons() {
     .then((pokemon) =>
       pokemon.forEach((pokemon) => {
         myPokemonsMap.set(pokemon.pokeName, pokemon);
-        console.log(pokemon.pokeName);
       })
     );
-  console.log("get all pokemons - 2");
-  console.log(myPokemonsMap);
 
   dbDisplayPokemon();
 }

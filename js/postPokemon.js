@@ -27,8 +27,6 @@ async function postPokemon(key, value) {
   postPokemonRequest.body = body;
 
   await fetch(url, postPokemonRequest).catch((err) => console.log(err));
-  console.log("POST pokemon to DB - 1");
-  console.log(key + " " + value);
 }
 
 

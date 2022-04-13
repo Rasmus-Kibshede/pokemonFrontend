@@ -16,6 +16,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="js/jqueryIncludeHeaderFooter.js"></script>
 </head>
 
@@ -23,15 +24,18 @@
 
 <div id="header"></div>
 
+<button id="previousPage">Previous page</button>
+<button id="nextPage">Next page</button>
+
 <h1 class="text-center">Pokemon Project</h1>
 
 <div class="col-7 m-auto">
   <div id="div-pokemons" class="d-inline-block float-start col-5 me-5">
     <table class="table table-success table-striped" id="table-pokemons">
       <tr>
-        <th>Number</th>
+        <th>Index</th>
         <th>Pokemon name</th>
-        <th>Pokemon name</th>
+        <th>Catch</th>
       </tr>
     </table>
   </div>
@@ -39,9 +43,9 @@
   <div id="div-my-pokemons" class="col-5 d-inline-block">
     <table class="table table-dark table-striped" id="table-my-pokemons">
       <tr>
-        <th>Number</th>
+        <th>Index</th>
         <th>Pokemon name</th>
-        <th>Pokemon name</th>
+        <th>Release</th>
       </tr>
     </table>
   </div>

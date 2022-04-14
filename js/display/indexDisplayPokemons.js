@@ -11,10 +11,8 @@ function clearTable(table) {
   }
 }
 
-
 //Runs in the fetchPokemon script
 function apiDisplayPokemon() {
-
   clearTable(tablePokemons);
 
   let index = 1;
@@ -40,18 +38,15 @@ function apiDisplayPokemon() {
     addInput.type = "button";
     addInput.value = "Catch pokemon";
     addInput.onclick = async function () {
-
       //TODO doesnt work like it should. Work correctly in debug mode
       await postPokemon(key, value);
       await DBGetAllPokemons();
-
     };
     cell.appendChild(addInput);
 
     index++;
   });
 }
-
 
 function dbDisplayPokemon() {
   clearTable(tableMyPokemons);
@@ -74,12 +69,10 @@ function dbDisplayPokemon() {
     aTag.textContent = capitalizeFirstLetter(key);
     //aTag.href = value.url;
 
-
     aTag.href = "pokedex.html";
     aTag.onclick = function () {
       localStorage.setItem("pokemon", JSON.stringify(value));
     };
-
 
     cell.appendChild(aTag);
 
@@ -90,7 +83,6 @@ function dbDisplayPokemon() {
     removeInput.onclick = async function () {
       tableMyPokemons.deleteRow(row.rowIndex);
       await restDeletePokemon(myPokemonsMap.get(key));
-
     };
     cell.appendChild(removeInput);
 

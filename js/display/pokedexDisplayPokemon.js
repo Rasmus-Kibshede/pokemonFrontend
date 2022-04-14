@@ -21,3 +21,4 @@ function displayPokemonInfo(pokeDex) {
     statsDiv.appendChild(div);
   }
 }
+

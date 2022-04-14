@@ -53,6 +53,7 @@ footer {
 
 #tables-display td, #tables-display th {
   padding: 10px 0;
+  border-bottom: 1px solid black;
 }
 
 #tables-display tr:nth-child(odd) {
@@ -69,5 +70,12 @@ footer {
 
 #table-my-pokemons {
   grid-area: right;
+}
+
+
+#stats {
+  margin: 20px;
+  display: grid;
+  gap: 15px;
 }
 

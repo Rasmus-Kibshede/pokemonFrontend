@@ -43,7 +43,7 @@ function apiDisplayPokemon() {
 
       //TODO doesnt work like it should. Work correctly in debug mode
       await postPokemon(key, value);
-      await getAllPokemons();
+      await DBGetAllPokemons();
 
     };
     cell.appendChild(addInput);
@@ -66,14 +66,21 @@ function dbDisplayPokemon() {
 
     cell = row.insertCell(colCount++);
     const pTag = document.createElement("p");
-
     pTag.textContent = value.pokeIndex;
     cell.appendChild(pTag);
 
     cell = row.insertCell(colCount++);
     const aTag = document.createElement("a");
     aTag.textContent = capitalizeFirstLetter(key);
-    aTag.href = value.url;
+    //aTag.href = value.url;
+
+
+    aTag.href = "pokedex.html";
+    aTag.onclick = function () {
+      localStorage.setItem("pokemon", JSON.stringify(value));
+    };
+
+
     cell.appendChild(aTag);
 
     cell = row.insertCell(colCount++);

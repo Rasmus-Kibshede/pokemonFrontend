@@ -72,10 +72,76 @@ footer {
   grid-area: right;
 }
 
+#pokedex {
+  display: grid;
+  grid-template-columns: 80px auto 150px;
+  justify-content: center;
+  align-items: center;
+  justify-items: start;
+}
+
+
+#pokedexHeader {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+#pokedexLeft {
+  grid-column-start: 1;
+}
+
+#pokedexRight {
+  grid-column-start: 3;
+}
+
+#pokedexFooter {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+#pokedexContent {
+  width: 99%;
+  height: 99%;
+  display: grid;
+  grid-template-areas:
+    'stats img img'
+    'stats moves moves';
+  background-color: #f35978;
+  border: solid 5px black;
+  border-radius: 5px;
+}
+
+#pokedexContent img {
+  grid-area: img;
+  margin: auto;
+  max-width: 250px;
+  max-height: 250px;
+}
+
 
 #stats {
   margin: 20px;
+  padding: 10px;
+  grid-area: stats;
   display: grid;
-  gap: 15px;
+  align-items: center;
 }
 
+#stats div {
+  padding: 10px;
+  display: grid;
+  grid-template-areas:
+    'left right';
+  justify-content: space-between;
+  background: linear-gradient(to right, #bd0f33 0%, #f35978 100%);
+  border-radius: 5px;
+}
+
+
+#stats span {
+  font-size: 25px;
+}
+
+#stats span:nth-child(odd) {
+  font-weight: bold;
+}

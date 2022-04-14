@@ -5,10 +5,10 @@ function getElement(text) {
 }
 
 function displayPokemonInfo(pokeDex) {
-  getElement("#pokedexImg").src = pokeDex.sprites.other.dream_world.front_default;
+  getElement("#pokedexImg").src =
+    pokeDex.sprites.other.dream_world.front_default;
 
   for (let i = 0; i < pokeDex.stats.length; i++) {
-
     let div = document.createElement("div");
 
     let key = document.createElement("span");
@@ -21,4 +21,3 @@ function displayPokemonInfo(pokeDex) {
     statsDiv.appendChild(div);
   }
 }
-
